@@ -1,0 +1,11 @@
+*.md
+.dockerignore
+.env*
+.git
+notes
+docker-compose.yml
+Makefile
+tags
+docker-vol
+target
+.sass-cache
