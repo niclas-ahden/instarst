@@ -23,7 +23,7 @@ pub fn App(cx: Scope) -> impl IntoView {
 
         <Link rel="preconnect" href="https://fonts.googleapis.com"/>
         <Link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
-        <Link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+        <Link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;700&display=swap"/>
 
         <Title text="Instateam"/>
 
