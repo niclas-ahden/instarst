@@ -1,3 +1,3 @@
-pub mod home;
 pub mod blog;
-pub mod open_positions;
+pub mod home;
+pub mod recruiting;

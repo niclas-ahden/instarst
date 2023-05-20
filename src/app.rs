@@ -1,7 +1,13 @@
+use crate::routes::{
+    blog::*,
+    home::*,
+    recruiting::*,
+    recruiting::front_end::*,
+    recruiting::back_end::*,
+};
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
-use crate::routes::{home::*, blog::*, open_positions::*};
 
 #[component]
 pub fn App(cx: Scope) -> impl IntoView {
@@ -19,20 +25,20 @@ pub fn App(cx: Scope) -> impl IntoView {
         <Link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
         <Link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
 
-        <Title text="instarst"/>
+        <Title text="Instateam"/>
 
         <Router>
-            <nav>
+            <nav class="MainNav">
                 <ul>
                     <li>
                         <A href="" exact=true>"Home"</A>
                     </li>
                     <li>
-                        <A href="/blog">"Blog"</A>
+                        <A href="/recruiting">"Recruiting"</A>
                     </li>
-                    <li>
-                        <A href="/open-positions">"Open Positions"</A>
-                    </li>
+                    // <li>
+                    //     <A href="/blog">"Blog"</A>
+                    // </li>
                 </ul>
             </nav>
 
@@ -40,14 +46,17 @@ pub fn App(cx: Scope) -> impl IntoView {
                 <Routes>
                     <Route path="" view=|cx| view! { cx, <Home/> }/>
                     <Route path="/blog" view=|cx| view! { cx, <Blog/> }/>
-                    <Route path="/open-positions" view=|cx| view! { cx, <OpenPositions/> }/>
-                    <Route path="/open-positions/typescript-front-end-developer" view=|cx| view! { cx, <FrontEndDeveloper/> }/>
-                    <Route path="/open-positions/typescript-back-end-developer" view=|cx| view! { cx, <BackEndDeveloper/> }/>
+                    <Route path="/recruiting" view=|cx| view! { cx, <OpenPositions/> }/>
+                    <Route path="/recruiting/typescript-front-end-developer" view=|cx| view! { cx, <FrontEndDeveloper/> }/>
+                    <Route path="/recruiting/typescript-back-end-developer" view=|cx| view! { cx, <BackEndDeveloper/> }/>
+                    // TODO: Implement 404. What's below doesn't work, because it'll catch static
+                    // asset paths such as /pkg/instarst.css
+                    // <Route path="/*any" view=|cx| view! { cx, <FourOhFour/> }/>
                 </Routes>
             </main>
 
             <footer class="Footer">
-                <p class="Footer-copyright">"©️  Rust bros"</p>
+                <p class="Footer-copyright">"© 2023 Instateam AB"</p>
             </footer>
         </Router>
     }

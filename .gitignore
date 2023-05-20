@@ -12,5 +12,6 @@ test-results/
 end2end/playwright-report/
 playwright/.cache/
 
+.DS_Store
 .sass-cache
 notes
