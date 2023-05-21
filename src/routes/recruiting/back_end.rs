@@ -94,7 +94,7 @@ pub fn BackEndDeveloper(cx: Scope) -> impl IntoView {
             </p>
             <p class="JobDescription-contact">
                 <strong>"Niclas Åhdén"</strong>
-                <span>"Tillfällig IT-chef"</span>
+                <span>"Tillförordnad IT-chef"</span>
                 <a href="mailto:niclas@instateam.se">"niclas@instateam.se"</a>
                 <a href="tel:+46705650510">"070-565 05 10"</a>
             </p>
