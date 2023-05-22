@@ -40,14 +40,6 @@ a[aria-current=page] {
   font-weight: bold;
 }
 
-// ul {
-//   margin-left: 1rem;
-// }
-// 
-// li {
-//   margin-left: 1rem;
-// }
-
 p {
   margin-bottom: 1rem
 }
@@ -191,6 +183,36 @@ main {
     font-size: 1.2rem;
     line-height: 1.3;
     text-align: center;
+  }
+}
+
+.ThankYou {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 32rem;
+}
+
+.ContactCard {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+
+  img {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .ContactCard-details {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+    a {
+        margin: 0.2rem 0;
+    }
   }
 }
 

@@ -3,20 +3,17 @@ use leptos::*;
 use leptos_router::*;
 pub mod back_end;
 pub mod front_end;
+pub mod thank_you;
 
 #[component]
 pub fn OpenPositions(cx: Scope) -> impl IntoView {
     view! { cx,
         <section class="Recruiting">
-            <h2>
-                "Open positions (on behalf of clients)"
-            </h2>
+            <h2>"Open positions (on behalf of clients)"</h2>
             <p>
                 "Are you looking for a new challenge? I'm currently looking to fill these positions on behalf of clients. I'm happy to share more information about the roles and the companies in response to your application."
             </p>
-            <p>
-                "Which role fits you best?"
-            </p>
+            <p>"Which role fits you best?"</p>
             <ul class="JobListings">
                 <li>
                     <JobListing
@@ -44,7 +41,7 @@ pub fn OpenPositions(cx: Scope) -> impl IntoView {
 #[component]
 fn JobListing(cx: Scope, #[prop(into)] title: String, #[prop(into)] href: String) -> impl IntoView {
     view! { cx,
-        <A class="JobListing" href={href}>
+        <A class="JobListing" href=href>
             <h3 class="JobListing-title">{title}</h3>
             <ul class="JobListing-details">
                 <li class="JobListing-time">"Full-time"</li>
@@ -97,10 +94,10 @@ fn ApplicationForm(cx: Scope, role: Role) -> impl IntoView {
 
     view! { cx,
         <form class="ApplicationForm" on:submit=on_submit>
-            <Input type_="text" label="Namn" required=true node_ref=name_input />
-            <Input type_="email" label="E-post" required=true node_ref=email_input />
-            <Textarea label="Meddelande" node_ref=text_input />
-            <input class="ApplicationForm-submit" type="submit" value="Skicka ansökan" />
+            <Input type_="text" label="Namn" required=true node_ref=name_input/>
+            <Input type_="email" label="E-post" required=true node_ref=email_input/>
+            <Textarea label="Meddelande" node_ref=text_input/>
+            <input class="ApplicationForm-submit" type="submit" value="Skicka ansökan"/>
         </form>
     }
 }
@@ -118,8 +115,8 @@ fn Input(
             {label}
             <input
                 class="ApplicationForm-input"
-                prop:type={type_}
-                prop:required={required.then_some("required")} // TODO: This can't be idiomatic.
+                prop:type=type_
+                prop:required=required.then_some("required")
                 node_ref=node_ref
             />
         </label>
@@ -130,8 +127,7 @@ fn Input(
 fn Textarea(cx: Scope, #[prop(into)] label: String, node_ref: NodeRef<Textarea>) -> impl IntoView {
     view! { cx,
         <label class="ApplicationForm-label">
-            {label}
-            <textarea class="ApplicationForm-textarea" node_ref=node_ref />
+            {label} <textarea class="ApplicationForm-textarea" node_ref=node_ref></textarea>
         </label>
     }
 }

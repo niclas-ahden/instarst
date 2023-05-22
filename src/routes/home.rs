@@ -8,10 +8,7 @@ pub fn Home(cx: Scope) -> impl IntoView {
         <section class="Hero">
             <div class="Hero-content">
                 <h2 class="Hero-heading">
-                    "Niclas Åhdén"
-                    <span class="Hero-subtext">
-                        "CTO on-demand"
-                    </span>
+                    "Niclas Åhdén" <span class="Hero-subtext">"CTO on-demand"</span>
                 </h2>
                 <p class="Hero-p">
                     "I help businesses by stepping in as a technical leader and taking on the challenges they face."
@@ -21,7 +18,7 @@ pub fn Home(cx: Scope) -> impl IntoView {
                 </p>
             </div>
             <div class="Hero-portrait">
-                <img src="/niclas-full.jpg" alt="Niclas Åhdén" />
+                <img src="/niclas-full.jpg" alt="Niclas Åhdén"/>
                 <div class="Hero-overlay"></div>
             </div>
         </section>
@@ -37,15 +34,9 @@ pub fn Home(cx: Scope) -> impl IntoView {
 }
 
 #[component]
-fn JobListing(
-    cx: Scope,
-    #[prop(into)]
-    title: String,
-    #[prop(into)]
-    href: String
-) -> impl IntoView {
+fn JobListing(cx: Scope, #[prop(into)] title: String, #[prop(into)] href: String) -> impl IntoView {
     view! { cx,
-        <A class="JobListing" href={href}>
+        <A class="JobListing" href=href>
             <h3>{title}</h3>
             <ul>
                 <li>"Full-time"</li>
