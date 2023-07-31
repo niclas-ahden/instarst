@@ -24,7 +24,7 @@ COPY Cargo.toml Cargo.lock .
 RUN mkdir src && \
     touch src/lib.rs && \
     cargo update && \
-    cargo install cargo-leptos@0.1.8 && \
+    cargo install cargo-leptos@0.1.11 && \
     rm -rf src
 
 COPY . ./
