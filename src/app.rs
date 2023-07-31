@@ -7,11 +7,11 @@ use leptos_meta::*;
 use leptos_router::*;
 
 #[component]
-pub fn App(cx: Scope) -> impl IntoView {
+pub fn App() -> impl IntoView {
     // Provides context that manages stylesheets, titles, meta tags, etc.
-    provide_meta_context(cx);
+    provide_meta_context();
 
-    view! { cx,
+    view! {
         <Stylesheet id="leptos" href="/pkg/instarst.css"/>
         <Link rel="preconnect" href="https://fonts.googleapis.com"/>
         <Link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
@@ -37,39 +37,27 @@ pub fn App(cx: Scope) -> impl IntoView {
                 <Routes>
                     <Route
                         path=""
-                        view=|cx| {
-                            view! { cx, <Home/> }
-                        }
+                        view=|| { view! { <Home/> } }
                     />
                     <Route
                         path="/blog"
-                        view=|cx| {
-                            view! { cx, <Blog/> }
-                        }
+                        view=|| { view! { <Blog/> } }
                     />
                     <Route
                         path="/recruiting"
-                        view=|cx| {
-                            view! { cx, <OpenPositions/> }
-                        }
+                        view=|| { view! { <OpenPositions/> } }
                     />
                     <Route
                         path="/recruiting/typescript-front-end-developer"
-                        view=|cx| {
-                            view! { cx, <FrontEndDeveloper/> }
-                        }
+                        view=|| { view! { <FrontEndDeveloper/> } }
                     />
                     <Route
-                        path="/recruiting/typescript-back-end-developer"
-                        view=|cx| {
-                            view! { cx, <BackEndDeveloper/> }
-                        }
+                        path="/recruiting/back-end-developer"
+                        view=|| { view! { <BackEndDeveloper/> } }
                     />
                     <Route
                         path="/recruiting/thank-you"
-                        view=|cx| {
-                            view! { cx, <ThankYou/> }
-                        }
+                        view=|| { view! { <ThankYou/> } }
                     />
                 </Routes>
             </main>

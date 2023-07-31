@@ -22,7 +22,7 @@ struct Article {
 // })
 
 #[component]
-pub fn Blog(cx: Scope) -> impl IntoView {
+pub fn Blog() -> impl IntoView {
     let articles = vec![
         Article {
             title: "Docker inline caching".to_string(),
@@ -38,19 +38,19 @@ pub fn Blog(cx: Scope) -> impl IntoView {
         },
     ];
 
-    view! { cx,
+    view! {
         <ul>
             {articles
                 .into_iter()
                 .map(|a| {
-                    view! { cx,
+                    view! {
                         <li>
                             <h3>{a.title}</h3>
                             <p>{a.ingress}</p>
                         </li>
                     }
                 })
-                .collect_view(cx)}
+                .collect_view()}
         </ul>
     }
 }

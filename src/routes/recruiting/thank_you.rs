@@ -1,8 +1,8 @@
 use leptos::*;
 
 #[component]
-pub fn ThankYou(cx: Scope) -> impl IntoView {
-    view! { cx,
+pub fn ThankYou() -> impl IntoView {
+    view! {
         <section class="Recruiting ThankYou">
             <h2>"Thank you!"</h2>
             <p>

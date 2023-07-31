@@ -2,8 +2,8 @@ use leptos::*;
 use leptos_router::*;
 
 #[component]
-pub fn Home(cx: Scope) -> impl IntoView {
-    view! { cx,
+pub fn Home() -> impl IntoView {
+    view! {
         <h1>"Instateam AB"</h1>
         <section class="Hero">
             <div class="Hero-content">
@@ -34,8 +34,8 @@ pub fn Home(cx: Scope) -> impl IntoView {
 }
 
 #[component]
-fn JobListing(cx: Scope, #[prop(into)] title: String, #[prop(into)] href: String) -> impl IntoView {
-    view! { cx,
+fn JobListing(#[prop(into)] title: String, #[prop(into)] href: String) -> impl IntoView {
+    view! {
         <A class="JobListing" href=href>
             <h3>{title}</h3>
             <ul>

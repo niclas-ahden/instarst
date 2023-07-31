@@ -1,91 +1,90 @@
 use leptos::*;
 
 #[component]
-pub fn BackEndDeveloper(cx: Scope) -> impl IntoView {
-    view! { cx,
+pub fn BackEndDeveloper() -> impl IntoView {
+    view! {
         <section class="JobDescription">
-            <h2>"Back-end utvecklare — TypeScript"</h2>
-            <h3>"Om företaget"</h3>
+            <h2>"Back-end developer"</h2>
             <p>
-                "Väletablerat och marknadsledande företag i Tyresö som hjälper landets största retailkedjor med skyltning i butik. De erbjuder en användarvänlig och egenutvecklad skyltprogramvara som används av huvudkontor och butikspersonal för att skapa skyltar, skriva ut allt från etiketter till stora banderoller och att styra digital skyltning i tusentals butiker."
+                <em>
+                    "Instateam is recruiting for this position on behalf of a client. You will receive all the details about the company in our first call."
+                </em>
+            </p>
+            <h3>"The Company"</h3>
+            <p>
+                "A well-established company in Tyresö which helps Sweden's largest retailers with their in-store communication (price signs, offers etc.). They offer a market-leading software that is used by thousands of stores to create, print, and publish signage. It's developed in-house by an experienced team and they're now transitioning it from a desktop app to a modern web app which you'll help build."
             </p>
             <p>
-                "De är 34 anställda, varav 10 på IT-avdelningen. Alla känner varandra och har stor inverkan."
+                "They're 34 employees, of which 10 work in the IT department. Everyone has a big impact on the direction and design of their products, there's no overbearing bureaucracy, and decisions can be made quickly."
             </p>
-            <h3>"Om tjänsten"</h3>
+            <h3>"The position"</h3>
             <p>
-                "Du kommer att utveckla Sveriges bästa skyltprogram och få möjlighet att göra det från grunden. Vi kommer att ersätta vår existerande produkt med en ny webbaserad version och den får du vara med och ta fram."
-            </p>
-            <p>
-                "Du blir briefad på vad vi skall bygga och så sätter vi igång med teknikval såsom ramverk, lint-regler etc. och gör allt såsom vi vill ha det. Du bygger en snabb och vältestad back-end för att designa skyltmallar (tänk www.canva.com), generera PDF:er, integrera med tredjepartslösningar för digital skyltning, läsa in miljontals produkter med mera. Allt är nytt men du kan luta dig mot vår existerande produkt för inspiration på vad som behöver byggas. Samtidigt har vi en gedigen kundstock för att samla in feedback från faktiska användare."
+                "You will be developing the next version of Sweden's leading retail signage software. It's a major project that is highly requested by customers and will enable both reaching new customers and improving the whole product."
             </p>
             <p>
-                "Front-end skrivs också i TypeScript (ramverk kommer att väljas gemensamt), så kod kan delas och kommunikation blir enklare. Front-end-utvecklaren rekryteras nu parallellt så ni kommer att börja ungefär samtidigt. Ni omges av seniora kollegor med djup domänkunskap, så ni bygger nytt med tillgång till utvecklare, designers och supportpersonal som har flera års erfarenhet av våra kunder och deras behov."
+                "You'll start this project from scratch together with a front-end developer whom is being recruited at the same time as you. You'll get to make the technical decisions to make this a success, while having no tech debt to hold you back, and you'll have the whole team from the current software to rely on for assistance. You won't be in a silo."
             </p>
             <p>
-                "Rent praktiskt så kommer butikspersonal hos Sveriges kändaste retail-kedjor med flera att använda skyltprogrammet du bygger för att skapa skyltar i sina butiker. När du går och handlar kommer du att se något som printats eller lagts upp på en digital skylt från din applikation."
+                "The project will be led by the same Product Owner whom designed and led the development of the current software, so you'll have ample access to domain knowledge, clear feature requirements, and customer understanding."
             </p>
             <p>
-                "Vi tror att vi har möjlighet att bygga en modern, välstrukturerad applikation som utan överdrift kommer att vara bäst på marknaden. Det är sällsynt att få göra detta från scratch, men nu händer det och vi vill att du hjälper oss!"
+                "You'll build a performant, well-tested, and well-built back-end for designing retails signs (think " <a href="www.canva.com">"www.canva.com"</a>"), generate PDFs, integrate with third-parties such as digital signage providers, injesting millions of products from our customers' systems etc."
             </p>
-            <h3>"Är du rätt för oss?"</h3>
+            <p>
+                "The front-end will be written in TypeScript (probably React) and we're open to different languages on the back-end. If you prefer TypeScript, we'll use that, otherwise we'll decide based on your experience. We want to find the right person and then choose a language based on the candidate."
+            </p>
+            <p>
+                "We think we've got a rare opportunity to write a great piece of software from scratch which will quite literally be the best of its kind in the country (and perhaps carry the company into other markets as well). We're looking forward to your application!"
+            </p>
+            <h3>"Are you a great fit?"</h3>
             <ul>
-                <li>"Flerårig erfarenhet av utveckling (med eller utan utbildning)"</li>
-                <li>"Bekväm att fatta tekniska beslut och långsiktigt äga utfallen"</li>
+                <li>"3+ years of development experience"</li>
+                <li>"Comfortable with making and owning long-term technical decisions"</li>
+                <li>"Experience of building performant, well-tested, and successful web applications"</li>
+                <li>"Experienced in relational databases (database design, queries, optimization etc.)"</li>
+                <li>"Comfortable setting up and owning CI & CD, containers, Linux, and AWS or other IaaS"</li>
+                <li>"Good communication and collaboration skills"</li>
+                <li>"A drive and desire to make what you're working on better"</li>
+                <li>"You think customer feedback and solving real issues is more fulfilling than jumping on the next framework"</li>
+            </ul>
+            <h3>"Additional skills"</h3>
+            <ul>
                 <li>
-                    "Gedigen erfarenhet av att utveckla snabba, vältestade och skalbara webbapplikationer"
+                    "Deeper knowledge of Linux, infra, and ops (e.g. some cluster technology, server management, infrastructure as code)"
                 </li>
                 <li>
-                    "Koll på relationsdatabaser (design, optimera queries, passande index etc.)"
-                </li>
-                <li>"Van vid CI & CD, Container-teknik, Linux och AWS eller dylik IaaS"</li>
-                <li>"God kommunikationsförmåga och vilja att samarbeta"</li>
-                <li>
-                    "Driven att göra applikationen bättre; det gnager om det finns långsiktiga buggar eller tillkortakommanden"
+                    "Graphical design (if you've used graphical design software a lot, you'll understand the needs of our users when they design a retail sign)"
                 </li>
                 <li>
-                    "Att en användare hör av sig om att du löst deras praktiska problem är roligare än att hoppa på nästa JS-ramverk"
+                    "Full-stack or an interest to broaden beyond the back-end"
                 </li>
             </ul>
-            <h3>"Meriterande kunskaper"</h3>
-            <ul>
-                <li>
-                    "Djupare kunskap inom Linux och servrar (ex. någon kluster-teknik, serverhantering, infrastructure as code)"
-                </li>
-                <li>
-                    "Grafisk design (om du arbetat mycket med ett grafiskt program så förstår du stora delar av vad vår applikation måste stödja för att designa en skylt)"
-                </li>
-                <li>
-                    "Full-stack eller intresse utöver back-end (vill du arbeta full-stack eller utvecklas inom front-end så finns den möjligheten här)"
-                </li>
-            </ul>
-            <h3>"Basinformation"</h3>
+            <h3>"Basic information"</h3>
             <dl>
-                <dt>"Anställningsform:"</dt>
-                <dd>"Heltid"</dd>
-                <dt>"Arbetsplats:"</dt>
+                <dt>"Employment:"</dt>
+                <dd>"Full-time"</dd>
+                <dt>"Location:"</dt>
                 <dd>"Tyresö"</dd>
-                <dt>"Hybrid:"</dt>
-                <dd>"upp till 50 % remote"</dd>
-                <dt>"Tillsättning av tjänsten:"</dt>
-                <dd>"Omgående"</dd>
-                <dt>"Kollektivavtal:"</dt>
-                <dd>"Ja"</dd>
+                <dt>"Remote policy:"</dt>
+                <dd>"Hybrid (up to 50 % remote)"</dd>
+                <dt>"Start date:"</dt>
+                <dd>"As soon as possible (0-3 months)"</dd>
+                <dt>"Swedish Collective agreement (Kollektivavtal):"</dt>
+                <dd>"Yes"</dd>
             </dl>
-            <h3>"Ansök"</h3>
+            <h3>"Apply now"</h3>
             <p>
-                "Skicka ett mail (" <a href="mailto:niclas@instateam.se">"niclas@instateam.se"</a>
-                ") eller ring (" <a href="tel:+46705650510">"070-565 05 10"</a>
-                ") och nämn vilken roll du söker. Vi sätter då en tid för att talas vid och tar det därifrån."
+                "Send an email to "
+                <a href="mailto:niclas@instateam.se">"niclas@instateam.se"</a>
+                " and mention which role you're applying for, and include something that gives me a clue of your history (e.g. CV, LinkedIn, git forge with relevant projects). We'll book a time for a call and take it from there!"
             </p>
             <p>
-                "Kandidater intervjuas löpande så vänligen vänta inte med att söka. Det vore tråkigt om vi hann fylla tjänsten innan vi fick prata med dig också, så skicka din ansökan nu, så kan vi prata om erfarenheter, projekt eller annat du vill dela när vi hörs 👌"
+                "Candidates are being interviewed right now so please don't delay your application. It'd be a pity if we didn't get a chance to talk to you 👌"
             </p>
             <p class="JobDescription-contact">
                 <strong>"Niclas Åhdén"</strong>
-                <span>"Tillförordnad IT-chef"</span>
+                <span>"Interim IT Manager"</span>
                 <a href="mailto:niclas@instateam.se">"niclas@instateam.se"</a>
-                <a href="tel:+46705650510">"070-565 05 10"</a>
             </p>
         </section>
     }

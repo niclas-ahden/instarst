@@ -1,7 +1,14 @@
+// Sass variables for media queries etc. where CSS vars are not supported.
+// $breakpoint-small: 600px;
+$breakpoint-medium: 960px; // Fix Home (Recruiting and ads work)
+$breakpoint-large: 1180px; // Everything works (iPad Air)
+$breakpoint-x-large: 2300px; // Fix Home (portrait is too far too the right)
+
 :root {
   --serif-font-family: "DM Serif Display";
   --text-dark: #171718;
   --text-light: #545863;
+  --main-nav-top-space: 1rem;
 }
 
 * {
@@ -9,6 +16,160 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.Hero {
+  display: grid;
+  justify-items: end;
+  align-items: center;
+  width: 100%;
+}
+
+@media screen and (max-width: $breakpoint-medium) {
+  dbody {
+    background: blue !important;
+  }
+
+  .Hero {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Hero-portrait {
+    max-height: 30rem;
+  }
+
+  .Hero-content {
+    z-index: 1;
+    grid-column: 1;
+    grid-row: 1 1;
+    justify-self: center;
+    align-self: end;
+    margin-bottom: 2rem;
+    padding: 0 .75rem;
+    align-self: center;
+  }
+
+  .Hero-overlay {
+    display: none;
+  }
+
+  .Hero-heading {
+    font-size: 3rem;
+  }
+
+  .Hero-subtext {
+    font-size: 2.4rem;
+  }
+
+  .Hero-p {
+    font-size: 1.3rem;
+  }
+
+  .Challenges {
+    padding: 2rem;
+    align-items: center;
+  }
+
+  .Challenges-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .Recruiting {
+    padding: 0 0.75rem 2rem;
+  }
+
+  .JobListing-details {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .JobDescription {
+    padding: 0 0.75rem 2rem;
+  }
+}
+
+@media screen and (min-width: $breakpoint-medium + 1) {
+  .MainNav {
+    position: absolute;
+  }
+
+  .Hero-content {
+    grid-column: 2;
+  }
+
+  .Hero-portrait {
+    grid-column: 3;
+    max-width: 40rem;
+    min-width: 10rem;
+  }
+
+  .Hero-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(98deg, white 20%, transparent 20.1%);
+  }
+
+  .Hero-heading {
+    color: var(--text-dark);
+    font-size: 4rem;
+  }
+
+  .Hero-subtext {
+    font-size: 3rem;
+  }
+
+  .Hero-p {
+    color: var(--text-dark);
+    font-size: 1.4rem;
+  }
+
+  .Challenges {
+    padding: 4rem;
+    align-items: flex-start;
+  }
+
+  .Challenges-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .Challenges-item {
+    list-style: none;
+  }
+
+  .Recruiting {
+    padding: 4rem 0;
+  }
+
+  .JobListing-details {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .JobDescription {
+    padding: 4rem 0;
+  }
+}
+
+@media screen and (min-width: $breakpoint-medium + 1) and (max-width: $breakpoint-large) {
+  .Hero {
+    grid-template-columns: auto auto 0.7fr;
+  }
+}
+
+@media screen and (min-width: $breakpoint-large + 1) {
+  .Hero {
+    grid-template-columns: 1fr auto 1fr;
+  }
 }
 
 body {
@@ -19,8 +180,12 @@ body {
 }
 
 .MainNav {
-  position: absolute;
-  top: 1rem;
+  z-index: 1;
+  margin-top: var(--main-nav-top-space);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .MainNav ul {
@@ -69,17 +234,8 @@ main {
   width: 100%;
 }
 
-.Hero {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  justify-items: end;
-  align-items: center;
-  width: 100%;
-}
-
 .Hero-content {
   grid-row: 1;
-  grid-column: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -88,10 +244,7 @@ main {
 .Hero-portrait {
   display: block;
   overflow: hidden;
-  grid-column: 3;
   grid-row: 1;
-  max-width: 40rem;
-  min-width: 10rem;
   position: relative;
 }
 
@@ -101,36 +254,22 @@ main {
   height: 100%;
 }
 
-.Hero-overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(98deg, white 20%, transparent 20.1%);
-}
-
 .Hero-heading {
-  font-size: 4rem;
   font-weight: 400;
   line-height: 1.3;
   text-align: center;
   font-family: var(--serif-font-family);
-  color: var(--text-dark);
   margin: 2rem auto 2rem auto;
 }
 
 .Hero-subtext {
   font-family: var(--serif-font-family);
-  font-size: 3rem;
   display: block;
 }
 
 .Hero-p {
-  font-size: 1.4rem;
   line-height: 1.3;
   text-align: center;
-  color: var(--text-dark);
   max-width: 31rem;
 }
 
@@ -142,22 +281,13 @@ main {
 .Challenges {
   background: var(--text-dark);
   color: #fff;
-  padding: 4rem;
   width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-
-.Challenges-list {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 2rem;
+  flex-grow: 1;
 }
 
 .Challenges-item {
-  list-style: none;
   display: flex;
   align-items: center;
   justify-contents: center;
@@ -167,7 +297,6 @@ main {
 }
 
 .Recruiting {
-  padding: 4rem 0;
   margin-top: 2rem;
   max-width: 40rem;
 
@@ -240,15 +369,15 @@ main {
     text-decoration: underline;
   }
 
-  ul {
-    display: flex;
-    list-style: none;
-    gap: 1.5rem;
+}
 
-    li {
-      font-size: 1rem;
-      color: var(--text-light);
-    }
+.JobListing-details {
+  display: flex;
+  list-style: none;
+
+  li {
+    font-size: 1rem;
+    color: var(--text-light);
   }
 }
 
@@ -258,7 +387,6 @@ main {
 
 .JobDescription {
   margin-top: 2rem;
-  padding: 4rem 0;
   max-width: 40rem;
 
   h2 {
@@ -277,6 +405,10 @@ main {
   strong, span, p, li, dt, dd {
     font-size: 1.1rem;
     line-height: 1.4;
+  }
+
+  li + li {
+    margin-top: 0.75rem;
   }
 
   dt, dd {

@@ -1,3 +1,4 @@
+#![allow(unused_variables)]
 use leptos::html::*;
 use leptos::*;
 use leptos_router::*;
@@ -6,8 +7,8 @@ pub mod front_end;
 pub mod thank_you;
 
 #[component]
-pub fn OpenPositions(cx: Scope) -> impl IntoView {
-    view! { cx,
+pub fn OpenPositions() -> impl IntoView {
+    view! {
         <section class="Recruiting">
             <h2>"Open positions (on behalf of clients)"</h2>
             <p>
@@ -23,8 +24,8 @@ pub fn OpenPositions(cx: Scope) -> impl IntoView {
                 </li>
                 <li>
                     <JobListing
-                        title="Back-end developer — TypeScript"
-                        href="/recruiting/typescript-back-end-developer#top"
+                        title="Back-end developer"
+                        href="/recruiting/back-end-developer#top"
                     />
                 </li>
             </ul>
@@ -39,8 +40,8 @@ pub fn OpenPositions(cx: Scope) -> impl IntoView {
 }
 
 #[component]
-fn JobListing(cx: Scope, #[prop(into)] title: String, #[prop(into)] href: String) -> impl IntoView {
-    view! { cx,
+fn JobListing(#[prop(into)] title: String, #[prop(into)] href: String) -> impl IntoView {
+    view! {
         <A class="JobListing" href=href>
             <h3 class="JobListing-title">{title}</h3>
             <ul class="JobListing-details">
@@ -71,16 +72,25 @@ pub struct Application {
 }
 
 #[component]
-fn ApplicationForm(cx: Scope, role: Role) -> impl IntoView {
-    let name_input: NodeRef<Input> = create_node_ref(cx);
-    let email_input: NodeRef<Input> = create_node_ref(cx);
-    let text_input: NodeRef<Textarea> = create_node_ref(cx);
+fn ApplicationForm(role: Role) -> impl IntoView {
+    let name_input: NodeRef<Input> = create_node_ref();
+    let email_input: NodeRef<Input> = create_node_ref();
+    let text_input: NodeRef<Textarea> = create_node_ref();
 
     let on_submit = move |ev: ev::SubmitEvent| {
         ev.prevent_default();
-        let name = name_input().expect("name input to exist").value();
-        let email = email_input().expect("email input to exist").value();
-        let text = text_input().expect("text input to exist").value();
+        let name =
+            name_input()
+            .expect("name input to exist")
+            .value();
+        let email =
+            email_input()
+            .expect("email input to exist")
+            .value();
+        let text =
+            text_input()
+            .expect("text input to exist")
+            .value();
         let application = Application {
             role: role.clone(),
             name,
@@ -92,7 +102,7 @@ fn ApplicationForm(cx: Scope, role: Role) -> impl IntoView {
         });
     };
 
-    view! { cx,
+    view! {
         <form class="ApplicationForm" on:submit=on_submit>
             <Input type_="text" label="Namn" required=true node_ref=name_input/>
             <Input type_="email" label="E-post" required=true node_ref=email_input/>
@@ -104,13 +114,12 @@ fn ApplicationForm(cx: Scope, role: Role) -> impl IntoView {
 
 #[component]
 fn Input(
-    cx: Scope,
     #[prop(into)] label: String,
     #[prop(into)] type_: String,
     required: bool,
     node_ref: NodeRef<Input>,
 ) -> impl IntoView {
-    view! { cx,
+    view! {
         <label class="ApplicationForm-label">
             {label}
             <input
@@ -124,8 +133,8 @@ fn Input(
 }
 
 #[component]
-fn Textarea(cx: Scope, #[prop(into)] label: String, node_ref: NodeRef<Textarea>) -> impl IntoView {
-    view! { cx,
+fn Textarea(#[prop(into)] label: String, node_ref: NodeRef<Textarea>) -> impl IntoView {
+    view! {
         <label class="ApplicationForm-label">
             {label} <textarea class="ApplicationForm-textarea" node_ref=node_ref></textarea>
         </label>
