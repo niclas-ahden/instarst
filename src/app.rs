@@ -1,5 +1,10 @@
 use crate::routes::{
-    blog::*, home::*, recruiting::back_end::*, recruiting::front_end::*, recruiting::thank_you::*,
+    blog::*,
+    blog::avoiding_danger_using_types::*,
+    home::*,
+    recruiting::back_end::*,
+    recruiting::front_end::*,
+    recruiting::thank_you::*,
     recruiting::*,
 };
 use leptos::*;
@@ -17,7 +22,7 @@ pub fn App() -> impl IntoView {
         <Link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
         <Link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Fira+Code&family=Inter:wght@400;700&display=swap"
         />
         <Title text="Instateam"/>
         <Router>
@@ -31,6 +36,9 @@ pub fn App() -> impl IntoView {
                     <li>
                         <A href="/recruiting">"Recruiting"</A>
                     </li>
+                    <li>
+                        <A href="/blog">"Blog"</A>
+                    </li>
                 </ul>
             </nav>
             <main>
@@ -41,7 +49,11 @@ pub fn App() -> impl IntoView {
                     />
                     <Route
                         path="/blog"
-                        view=|| { view! { <Blog/> } }
+                        view=|| { view! { <AvoidingDangerUsingTypes/> } }
+                    />
+                    <Route
+                        path="/blog/avoiding-danger-using-types"
+                        view=|| { view! { <AvoidingDangerUsingTypes/> } }
                     />
                     <Route
                         path="/recruiting"

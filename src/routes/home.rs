@@ -11,7 +11,7 @@ pub fn Home() -> impl IntoView {
                     "Niclas Åhdén" <span class="Hero-subtext">"CTO on-demand"</span>
                 </h2>
                 <p class="Hero-p">
-                    "I help businesses by stepping in as a technical leader and taking on the challenges they face."
+                    "I help businesses by stepping in as a technical leader and taking on their pressing challenges."
                 </p>
                 <p class="Hero-p">
                     "Usually it's to drive product development, lead an important initiative, or improve the output of existing teams."

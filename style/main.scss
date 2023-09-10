@@ -13,9 +13,11 @@ $breakpoint-x-large: 2300px; // Fix Home (portrait is too far too the right)
 
 * {
   font-family: "Inter";
+  font-size: 1.1rem;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  line-height: 1.4;
 }
 
 .Hero {
@@ -23,6 +25,56 @@ $breakpoint-x-large: 2300px; // Fix Home (portrait is too far too the right)
   justify-items: end;
   align-items: center;
   width: 100%;
+}
+
+.Tag {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  margin: 0 0.5rem 1rem 0;
+  background: #061626;
+  color: #fff;
+  border-radius: 0.3rem;
+}
+
+.Code {
+  padding: 1rem;
+  background: #061626;
+  color: #fff;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+pre,
+pre *,
+.Highlight-inline {
+  font-family: "Fira Code", Monospace;
+  font-size: 1rem;
+}
+
+.Highlight-inline {
+  padding: 0.15rem 0.3rem;
+  background: #061626;
+  border-radius: 0.3rem;
+}
+
+.Highlight-function {
+  color: rgb(138, 169, 249);
+}
+
+.Highlight-type {
+  color: rgb(95, 217, 184);
+}
+
+.Highlight-control {
+  color: rgb(191, 148, 228);
+}
+
+.Highlight-string {
+  color: rgb(229, 197, 148);
+}
+
+.Highlight-comment {
+  color: rgb(128, 142, 143);
 }
 
 @media screen and (max-width: $breakpoint-medium) {
@@ -78,7 +130,8 @@ $breakpoint-x-large: 2300px; // Fix Home (portrait is too far too the right)
     gap: 1rem;
   }
 
-  .Recruiting {
+  .Recruiting,
+  .Blog {
     padding: 0 0.75rem 2rem;
   }
 
@@ -87,7 +140,8 @@ $breakpoint-x-large: 2300px; // Fix Home (portrait is too far too the right)
     gap: 0.75rem;
   }
 
-  .JobDescription {
+  .JobDescription,
+  .BlogPost {
     padding: 0 0.75rem 2rem;
   }
 }
@@ -146,7 +200,8 @@ $breakpoint-x-large: 2300px; // Fix Home (portrait is too far too the right)
     list-style: none;
   }
 
-  .Recruiting {
+  .Recruiting,
+  .Blog {
     padding: 4rem 0;
   }
 
@@ -155,7 +210,8 @@ $breakpoint-x-large: 2300px; // Fix Home (portrait is too far too the right)
     gap: 1.5rem;
   }
 
-  .JobDescription {
+  .JobDescription,
+  .BlogPost {
     padding: 4rem 0;
   }
 }
@@ -268,7 +324,6 @@ main {
 }
 
 .Hero-p {
-  line-height: 1.3;
   text-align: center;
   max-width: 31rem;
 }
@@ -296,7 +351,8 @@ main {
   font-weight: 500;
 }
 
-.Recruiting {
+.Recruiting,
+.Blog {
   margin-top: 2rem;
   max-width: 40rem;
 
@@ -310,7 +366,6 @@ main {
 
   > p {
     font-size: 1.2rem;
-    line-height: 1.3;
     text-align: center;
   }
 }
@@ -385,7 +440,8 @@ main {
   background: #eefeef;
 }
 
-.JobDescription {
+.JobDescription,
+.BlogPost {
   margin-top: 2rem;
   max-width: 40rem;
 
@@ -400,11 +456,6 @@ main {
 
   ul {
     margin-left: 2rem;
-  }
-
-  strong, span, p, li, dt, dd {
-    font-size: 1.1rem;
-    line-height: 1.4;
   }
 
   li + li {
