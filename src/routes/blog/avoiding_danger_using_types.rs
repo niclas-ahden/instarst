@@ -172,7 +172,7 @@ pub fn AvoidingDangerUsingTypes()  -> impl IntoView {
                 <span class="Highlight-type">_</span>
                 <br />
                 <span class="Highlight-function">createAd</span>
-                " account amount adContent = [...]"
+                " account budget adContent = [...]"
 
             </pre>
 
