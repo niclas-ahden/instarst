@@ -38,7 +38,7 @@ pub fn FrontEndDeveloper() -> impl IntoView {
             </p>
             <h3>"Are you a great fit?"</h3>
             <ul>
-                <li>"3+ years of development experience"</li>
+                <li>"3+ years of professional front-end development experience"</li>
                 <li>"Comfortable with making and owning long-term technical decisions"</li>
                 <li>"Experience of building complex but user-friendly UIs"</li>
                 <li>"You think performance is a feature, not an afterthought"</li>
