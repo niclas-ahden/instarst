@@ -9,6 +9,7 @@ $breakpoint-x-large: 2300px; // Fix Home (portrait is too far too the right)
   --text-dark: #171718;
   --text-light: #545863;
   --main-nav-top-space: 1rem;
+  --horizontal-padding: 0rem;
 }
 
 * {
@@ -42,6 +43,7 @@ $breakpoint-x-large: 2300px; // Fix Home (portrait is too far too the right)
   color: #fff;
   border-radius: 5px;
   margin-bottom: 1rem;
+  overflow: scroll;
 }
 
 pre,
@@ -78,8 +80,8 @@ pre *,
 }
 
 @media screen and (max-width: $breakpoint-medium) {
-  dbody {
-    background: blue !important;
+  :root {
+      --horizontal-padding: 0.75rem;
   }
 
   .Hero {
@@ -131,18 +133,19 @@ pre *,
   }
 
   .Recruiting,
-  .Blog {
-    padding: 0 0.75rem 2rem;
+  .JobDescription,
+  .Blog,
+  .BlogPost {
+    padding: 0 var(--horizontal-padding) 2rem;
+  }
+
+  .Code {
+    max-width: calc(100vw - calc(var(--horizontal-padding) * 2));
   }
 
   .JobListing-details {
     flex-direction: column;
     gap: 0.75rem;
-  }
-
-  .JobDescription,
-  .BlogPost {
-    padding: 0 0.75rem 2rem;
   }
 }
 
@@ -201,18 +204,15 @@ pre *,
   }
 
   .Recruiting,
-  .Blog {
-    padding: 4rem 0;
+  .JobDescription,
+  .Blog,
+  .BlogPost {
+    padding: 4rem var(--horizontal-padding);
   }
 
   .JobListing-details {
     flex-direction: row;
     gap: 1.5rem;
-  }
-
-  .JobDescription,
-  .BlogPost {
-    padding: 4rem 0;
   }
 }
 
