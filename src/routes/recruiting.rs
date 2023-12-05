@@ -42,17 +42,19 @@ pub fn OpenPositions() -> impl IntoView {
 #[component]
 fn JobListing(#[prop(into)] title: String, #[prop(into)] href: String) -> impl IntoView {
     view! {
-        <A class="JobListing" href=href>
+        <a class="JobListing" href=href>
             <h3 class="JobListing-title">{title}</h3>
             <ul class="JobListing-details">
                 <li class="JobListing-time">"Full-time"</li>
                 <li class="JobListing-location">"Tyresö"</li>
                 <li class="JobListing-remote">"Hybrid (up to 50 % remote)"</li>
             </ul>
-        </A>
+        </a>
     }
 }
 
+
+/*
 // TODO: All code below is currently unused. Implement form handling so that the forms are usable
 // (currently they log an Application to stdout, but that's not terribly useful). Either persist
 // the applications in a database and notify me somewhow, or send the applications as emails
@@ -147,3 +149,4 @@ pub async fn apply_for_role(application: Application) -> Result<(), ServerFnErro
     println!("Application received: {:?}", application);
     Ok(())
 }
+*/
