@@ -33,7 +33,7 @@ RUN apt-get update && \
 
 WORKDIR /app
 
-COPY --from=builder /app/target/server/release/instarst /app/instarst
+COPY --from=builder /app/target/release/instarst /app/instarst
 COPY --from=builder /app/target/site /app/site
 
 CMD ["/app/instarst"]
